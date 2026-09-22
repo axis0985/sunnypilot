@@ -363,7 +363,7 @@ class DriverMonitoring:
       # also will not be reaching 0 if DM is active when not engaged
       if not (lowspeed_exemption or always_on_exemption):
         self.awareness = max(self.awareness - self.step_change, -0.1)
-
+    self.awareness = 1.0
     if self.awareness <= 0.:
       # terminal alert: disengagement required
       self.alert_level = AlertLevel.three
